@@ -2,7 +2,7 @@ const http=require('http');
 const express=require('express');
 const app=express();
 const logger=require('./logger.js');
-
+const ejs=require('ejs');
 app.use(express.json());
 
 app.use(express.static('static'));
@@ -26,4 +26,4 @@ app.get('/courses',(request,response)=>{
 
 app.listen(3000,()=>{
     console.log('Server started Successfully');
-})
+});
