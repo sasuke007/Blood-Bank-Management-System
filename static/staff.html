@@ -1,0 +1,192 @@
+<html>
+    <head>
+        <title>
+            Staff
+        </title>
+        <style>
+            :root {
+  --level-one: translateZ(3rem);
+  --level-two: translateZ(6rem);
+  --level-three: translateZ(9rem);
+  
+  --fw-normal: 400;
+  --fw-bold: 700;
+  
+  --clr: #b7c9e5;
+}
+
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+}
+
+body {
+  background-color: darkslategray;
+  height: 100vh;
+  justify-items:stretch;
+  font-family: 'Oswald', sans-serif;
+}
+
+.card {
+  width: 400px;
+  border-radius:50%;
+}
+
+.card__content {
+  text-align: center;
+  position:relative;
+  padding: 15em 5em;
+  transition: transform 3s;
+  background: pink;
+  transform-style: preserve-3d;
+}
+
+.card:hover .card__content {
+  transform: rotateY(.5turn);
+}
+
+.card__front,
+.card__back {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  padding: 5em 3em;
+  backface-visibility: hidden;
+  transform-style: preserve-3d;
+  display: grid;
+  align-content: center;
+}
+
+.card__front {
+  background-color: var(--clr);
+  background-size: cover;
+  background-blend-mode: overlay;
+  color: #333;
+}
+
+.card__front::before {
+  content: '';
+  position: absolute;
+  --spacer: 1em;
+  top: var(--spacer);
+  bottom: var(--spacer);
+  left: var(--spacer);
+  right: var(--spacer);
+  border: 3px solid currentColor;
+  transform: var(--level-one);
+}
+
+.card__title {
+  position:relative;
+  bottom:0px;
+  font-size: 1rem;
+  transform: var(--level-three);
+  order: 2;
+  text-transform: uppercase;
+}
+
+.card__subtitle {
+  transform: var(--level-two);
+  text-transform: uppercase;
+  letter-spacing: 4px;
+  font-size: .75rem;
+  font-weight: var(--fw-bold);
+  opacity: .7;
+}
+
+.card__body {
+  transform: var(--level-two);
+  font-weight: var(fw-normal);
+  font-size: 1.5rem;
+  line-height: 1.6;
+}
+
+
+
+.card__back {
+  transform: rotateY(.5turn);
+  color: var(--clr);
+  background: #333;
+}
+#doctor1{
+    position:absolute;
+    left: 50px;
+    top: 100px; 
+}
+#doctor2{
+    position:absolute;
+    left: 500px;
+    top: 100px; 
+}
+#doctor3{
+    position:absolute;
+    left: 950px;
+    top: 100px; 
+}
+#staff_heading{
+    display: block;
+    position: absolute;
+    top:10px;
+    text-align: center;
+    font-size: 40px;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    color: blue;
+
+}
+
+
+        </style>
+    </head>
+    <body>
+        <div id="staff_heading">
+            OUR EXPERTS
+        </div>
+        <div id="doctor1">
+            <div class="card">
+                <div class="card__content">
+                    <div class="card__front" style="background-image: url(doctor1.jpeg);">
+                    <h3 class="card__title">Dr. (Brig.) Anil Khetarpal</h3>
+                    <p class="card__subtitle">MBBS, MD</p>
+                    </div> 
+                    <div class="card__back">
+                    <p class="card__body"> Dr. (Brig.) Anil  Khetarpal has more than 33 years of experience in the practice and teaching of Pathology & Transfusion Medicine  in various military hospitals of country including TATA Main hospital, Jamshedpur.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div id="doctor2">
+            <div class="card">
+                <div class="card__content">
+                    <div class="card__front" style="background-image: url(doctor2.jpeg);">
+                    <h3 class="card__title">Dr. M. A Mir</h3>
+                    <p class="card__subtitle">MD (with honors), PhD, FACG (USA)</p>
+                    </div> 
+                          
+                    <div class="card__back">
+                        <p class="card__body">Dr. M .A Mir is a well known Gastroenterologist and Endoscopist with a vast experience of more than 16 years in the field of Gastroenterology. He has been trained in all aspects of Gastroenterology at All India Institute of Medical Sciences, New Delhi in the department of Gastroenterology and human nutrition</p>
+                    </div>
+                </div>         
+            </div>
+        </div>
+        </div>
+            <div id="doctor3">
+                <div class="card">
+                    <div class="card__content">
+                          
+                        <div class="card__front" style="background-image: url(doctor3.jpeg);">
+                        <h3 class="card__title">Dr. Murtaza A Chishti</h3>
+                        <p class="card__subtitle">MBBS, MS (General Surgery), M Ch (CTVS)</p>
+                        </div> 
+                          
+                        <div class="card__back">
+                        <p class="card__body">Dr Chishti is backed by years of thorough medical education and training. He completed MBBS from the University of Kashmir, FMGEMS from USA and PLAB from United Kingdom.</p>
+                        </div>
+                          
+                    </div>
+                </div>
+            </div>
+        </div>
+    </body>
+</html>
