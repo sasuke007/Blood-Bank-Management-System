@@ -13,7 +13,9 @@
         }
         #home_login_container{
             display:grid;
-            grid-template: repeat(3,1fr)/repeat(2,1fr);
+            grid-template-rows: repeat(3,1fr);
+            grid-template-columns: repeat(2,1fr);
+            grid-gap:7px;
         }
         #home_navbar_container{
             display:flex;
@@ -43,13 +45,13 @@
         #home_form_container>div{
             display:grid;
             grid-template: repeat(5,1fr)/repeat(2,1fr);
-            grid-gap:10px;
+            grid-gap:3px;
         }
         #home_form_donor_text{
             grid-column:1/-1;
             font-size: 30px;
         }
-        .Admin_Login {
+        .admin_login {
             position:absolute;
             bottom: 0px;
             right: 0px;
@@ -64,7 +66,8 @@
             margin: 4px 2px;
             cursor: pointer;
         }
-    </style>    
+    </style>   
+    <script type="text/javascript" src="jquery-3.3.1.js"></script> 
 </head>
 <body id="hello">
     <div id="home_outer_container">
@@ -72,10 +75,11 @@
            <!-- <div class="home_image_container"><img src="../images/logo.jpg" alt="Our Logo"></div>-->
             <div id="home_login_container">
                 <div>Name:</div>
-                <div><input type="text" placeholder="Enter your Name Here"></div>
+                <div><input type="text" placeholder="Enter your Name Here" name="name" id = "cust_name"></div>
                 <div>Password:</div>
-                <div><input type="password" placeholder="Type your password here"></div>
+                <div><input type="password" placeholder="Type your password here" name="password" id="cust_password"></div>
                 <div id="home_login_btn"><button>Submit</button></div>
+                <div id="home_login_msg"></div>
             </div>
         </div>
         <div id="home_navbar_container">
@@ -142,9 +146,9 @@
             </div>
         </div>
         <div>
-                <input onclick=redirect() type="button" class="Admin_Login" value="ADMIN LOGIN">
+                <button class="admin_login">ADMIN LOGIN</button>
         </div>
     </div>
-    <script type="text/javascript" src="../Home_javascript.js"></script> 
+    <script type="text/javascript" src="home_javascript.js"></script> 
 </body>
 </html>

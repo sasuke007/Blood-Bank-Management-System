@@ -1,22 +1,31 @@
 const http=require('http');
 const express=require('express');
 const app=express();
-const logger=require('./logger.js');
 const ejs=require('ejs');
-app.use(express.json());
+const bodyParser=require('body-parser');
 
+
+app.use(bodyParser.urlencoded({
+    extended: true
+}));
+app.use(bodyParser.json());
 app.use(express.static('static'));
+app.use(express.static('javascript'));
+app.use(express.static('images'));
 
-app.use(logger.log);
 
-app.use((request,response,next)=>{
-    console.log("Authenticating..");
-    next();
+console.log(__dirname);
+app.post('/',(request,response)=>{
+    console.log(request.body.name);
+    response.send('Received');
 });
 
 app.get('/',(request,response)=>{
-    console.log('/ request ');
-    response.send(request.query.name + " "+request.query.password);
+    let name=request.query.name;
+    let password=request.query.password;
+    console.log('Name :'+name+' '+'Password :'+password);
+    //console.log(request);
+    response.send('Request received');
 });
 
 app.get('/courses',(request,response)=>{
