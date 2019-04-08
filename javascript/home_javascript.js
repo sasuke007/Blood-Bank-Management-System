@@ -8,16 +8,16 @@ customer_login_btn.addEventListener('click', () => {
             name: $('#cust_name').val(),
             password: $('#cust_password').val()
         }
-        let request=$.post('/',details,process_response);
+        let request=$.post('/',JSON.stringify(details),process_response);
         //request.error(handle_error);
-        $('#cust_name').val('');
-        $('#cust_password').val('');
     } else {
         $('#home_login_msg').text(' Input fields cannot be left blank').css('color','red');
         setTimeout(() => {
             $('#home_login_msg').text('');
         }, 3000);
     }
+        $('#cust_name').val('');
+        $('#cust_password').val('');
 });
 
 function handle_error(){
