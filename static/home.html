@@ -16,11 +16,25 @@
             grid-template-rows: repeat(3,1fr);
             grid-template-columns: repeat(2,1fr);
             grid-gap:7px;
+            position:sticky;
+            top:0px;
         }
-        #home_navbar_container{
+        #home_navbar_container ul{
             display:flex;
             justify-content: space-around;
             margin:20px;
+            list-style:none;
+        }
+        #home_navbar_container a{
+            text-decoration:none;
+            color:black;
+            text-transform: uppercase;
+            
+        }
+        #home_navbar_container a:hover{
+            color:gray;
+            text-decoration:underline;
+            
         }
         #home_mid_container{
             display:flex;
@@ -82,13 +96,15 @@
                 <div id="home_login_msg"></div>
             </div>
         </div>
-        <div id="home_navbar_container">
-            <div>Home</div>
-            <div>Staff</div>
-            <div>Contact Us</div>
-            <div>Branches</div>
-            <div>About Us</div>
-        </div>
+        <nav id="home_navbar_container">
+            <ul>
+                <li><a href="#">Home</a></li>
+                <li><a href="#">Our Staff</a></li>
+                <li><a href="#">Contact Us</a></li>
+                <li><a href="#">Branches</a></li>
+                <li><a href="#">About Us</a></li>
+            </ul>
+        </nav>
         <div id="home_mid_container">
             <div id="home_form_container">
                 <div>
