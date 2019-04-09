@@ -37,42 +37,111 @@ function validate() {
 function redirect() {
     location.replace("login.html")
 }
-
-function MadhyaPradesh_cities() {
+function MadhyaPradesh_cities(){
+    var a = document.createElement("option");
+    a.text = "Indore";
+    document.getElementById("home_city_list").options.add(a,0);
+    var b = document.createElement("option");
+    b.text = "Bhopal";
+    document.getElementById("home_city_list").options.add(b,0);
     var c = document.createElement("option");
-    c.text = "indore";
-    document.getElementById("home_city_list").options.add(c, 0);
+    c.text = "Jabalpur";
+    document.getElementById("home_city_list").options.add(c,0);
+    var d = document.createElement("option");
+    d.text = "Gwalior";
+    document.getElementById("home_city_list").options.add(d,0);
+    var e = document.createElement("option");
+    e.text = "Dewas";
+    document.getElementById("home_city_list").options.add(e,0);
+    
 }
 
-function Kashmir_cities() {
+function Maharashtra_cities(){
+    var a = document.createElement("option");
+    a.text = "Mumbai";
+    document.getElementById("home_city_list").options.add(a,0);
+    var b = document.createElement("option");
+    b.text = "Pune";
+    document.getElementById("home_city_list").options.add(b,0);
     var c = document.createElement("option");
-    c.text = "indore";
-    document.getElementById("home_city_list").options.add(c, 0);
+    c.text = "Nagpur";
+    document.getElementById("home_city_list").options.add(c,0);
+    var d = document.createElement("option");
+    d.text = "Nashik";
+    document.getElementById("home_city_list").options.add(d,0);
+    var e = document.createElement("option");
+    e.text = "Amravati";
+    document.getElementById("home_city_list").options.add(e,0);
+}
+function Kerela_cities(){
+    var a = document.createElement("option");
+    a.text = "Kochi";
+    document.getElementById("home_city_list").options.add(a,0);
+    var b = document.createElement("option");
+    b.text = "Kolam";
+    document.getElementById("home_city_list").options.add(b,0);
+    var c = document.createElement("option");
+    c.text = "Kannur";
+    document.getElementById("home_city_list").options.add(c,0);
+    var d = document.createElement("option");
+    d.text = "Aluva";
+    document.getElementById("home_city_list").options.add(d,0);
+    var e = document.createElement("option");
+    e.text = "Munnar";
+    document.getElementById("home_city_list").options.add(e,0);
+}
+function Andhra_cities(){
+    var a = document.createElement("option");
+    a.text = "Tirupati";
+    document.getElementById("home_city_list").options.add(a,0);
+    var b = document.createElement("option");
+    b.text = "Guntur";
+    document.getElementById("home_city_list").options.add(b,0);
+    var c = document.createElement("option");
+    c.text = "Vijayawada";
+    document.getElementById("home_city_list").options.add(c,0);
+    var d = document.createElement("option");
+    d.text = "Visakhapatnam";
+    document.getElementById("home_city_list").options.add(d,0);
+    var e = document.createElement("option");
+    e.text = "Kakinada";
+    document.getElementById("home_city_list").options.add(e,0);
+}
+function UttarPradesh_cities(){
+    var a = document.createElement("option");
+    a.text = "Lucknow";
+    document.getElementById("home_city_list").options.add(a,0);
+    var b = document.createElement("option");
+    b.text = "Mirzapur";
+    document.getElementById("home_city_list").options.add(b,0);
+    var c = document.createElement("option");
+    c.text = "Kanpur";
+    document.getElementById("home_city_list").options.add(c,0);
+    var d = document.createElement("option");
+    d.text = "Noida";
+    document.getElementById("home_city_list").options.add(d,0);
+    var e = document.createElement("option");
+    e.text = "Jhansi";
+    document.getElementById("home_city_list").options.add(e,0);
+}
+function TamilNadu_cities(){
+    var a = document.createElement("option");
+    a.text = "Chennai";
+    document.getElementById("home_city_list").options.add(a,0);
+    var b = document.createElement("option");
+    b.text = "Coimbatore";
+    document.getElementById("home_city_list").options.add(b,0);
+    var c = document.createElement("option");
+    c.text = "Salem";
+    document.getElementById("home_city_list").options.add(c,0);
+    var d = document.createElement("option");
+    d.text = "Tirrupur";
+    document.getElementById("home_city_list").options.add(d,0);
+    var e = document.createElement("option");
+    e.text = "Ooty";
+    document.getElementById("home_city_list").options.add(e,0);
 }
 
-function Kerela_cities() {
-    var c = document.createElement("option");
-    c.text = "indore";
-    document.getElementById("home_city_list").options.add(c, 0);
-}
-
-function Andhra_cities() {
-    var c = document.createElement("option");
-    c.text = "indore";
-    document.getElementById("home_city_list").options.add(c, 0);
-}
-
-function UttarPradesh_cities() {
-    var c = document.createElement("option");
-    c.text = "indore";
-    document.getElementById("home_city_list").options.add(c, 0);
-}
-
-function TamilNadu_cities() {
-    var c = document.createElement("option");
-    c.text = "indore";
-    document.getElementById("home_city_list").options.add(c, 0);
-}
 document.getElementById("home_state_list").onchange = function () {
     var list = document.getElementById("home_city_list");
     var length = list.options.length;
@@ -97,7 +166,7 @@ document.getElementById("home_state_list").onchange = function () {
     if (z == "Uttar Pradesh") {
         UttarPradesh_cities();
     }
-    if (z == "kashmir") {
-        Kashmir_cities();
+    if (z == "Maharashtra") {
+        Maharashtra_cities();
     }
 }
