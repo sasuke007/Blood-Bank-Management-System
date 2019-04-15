@@ -7,7 +7,6 @@ const client=require('./database/database').client;
 const userPojo=require('./pojo/usersPojo');
 const dao=require('./dao/usersDao');
 
-
 app.use(bodyParser.urlencoded({
     extended: true
 }));

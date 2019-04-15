@@ -1,0 +1,105 @@
+<html>
+    <head>
+        <style>
+            #userlogin_heading{
+                display: block;
+                text-align: center;
+                color: aqua;
+                font-size: 50px;
+            }
+            #userlogin_image{
+                position:relative;
+                width: 900px;
+                height: 500px;
+            }
+            #userlogin_loginform{
+                position:absolute;
+                right: 10px;
+                top: 70px;
+                font-size: 20px;
+                width: 400px;
+                height: 400px;
+            }
+            #userlogin_adminbutton{
+                position: absolute;
+                bottom: 0px;
+                right: 0px;
+                
+            }
+            #userlogin_loginform_heading{
+                position: relative;
+                display: block;
+                text-align: center;
+                font-size: 30px;
+                border-bottom: 30px;
+                border-bottom-color: white;
+                border-bottom-style: solid;
+            }
+            #userlogin_loginform_nameheading{
+                position: relative;
+                text-align: center;
+                border-bottom: 10px;
+                border-bottom-color: white;
+                border-bottom-style: solid;
+            }
+            #userlogin_loginform_passwordheading{
+                position: relative;
+                text-align: center;
+                border-bottom: 20px;
+                border-bottom-color: white;
+                border-bottom-style: solid;
+            }
+            #userlogin_loginform_namefield{
+                position: relative;
+                text-align: center;
+                border-bottom: 10px;
+                border-bottom-color: white;
+                border-bottom-style: solid;
+            }
+            #userlogin_loginform_passwordfield{
+                position: relative;
+                text-align: center;
+                border-bottom: 20px;
+                border-bottom-color: white;
+                border-bottom-style: solid;
+            }
+            #userlogin_loginform_submitbutton{
+                position: relative;
+                text-align: center;
+            }
+            #userlogin_loginform_signup{
+                position: relative;
+                text-align: center;
+            }
+        </style>
+    </head>
+    <body>
+        <div id="userlogin_heading">
+            Blood Bank          
+        </div>
+        <div id="userlogin_image">
+            <img src="F:\blood bank\Blood-Bank-Management-System\images\blood_donation.jpg" width="900px" height="500px">
+        </div>
+        <div id="userlogin_loginform">
+            <div id="userlogin_loginform_heading">
+                Login Credentials
+            </div>
+            <form>
+                    <div id="userlogin_loginform_nameheading">Username</div>
+                    <div id="userlogin_loginform_namefield"><input type="text" name="name" id = "cust_name"></div>
+                    <div id="userlogin_loginform_passwordheading">Password</div>
+                    <div id="userlogin_loginform_passwordfield"><input type="password" name="password" id="cust_password"></div>
+                    <div id="userlogin_loginform_submitbutton"><button>Log In</button></div>
+                    <div id="home_login_msg"></div>
+            </form>
+            <div id="userlogin_loginform_signup">
+                    <button type="button">Sign Up</button>
+            </div>
+        </div>
+        
+        <div id="userlogin_adminbutton">
+            <button type="button">Admin Login</button>
+
+        </div>
+    </body>
+</html>
