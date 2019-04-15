@@ -18,25 +18,19 @@ app.use(express.static('css'));
 app.use(express.static('javascript'));
 app.use(express.static('images'));
 
-
-
-
 app.post('/',(request,response)=>{
     let userName=request.body.name;
     let password=request.body.password;
-    let user=userPojo(userName,password);
-    console.log(request.body);
-    console.log(typeof request.body);
-    let ans=dao.insertUser(user);
-    if(ans){
-        console.log('Recored successfully Inserted');
-        response.send('success');
-    }
-    else{
-        response.send('error');
-    }
+    let user=new userPojo(userName,password);
+    dao.insertUser(user);
+    //  if(ans){
+    //     console.log('Recored successfully Inserted');
+    //     response.send('success');
+    // }
+    // else{
+    //     response.send('error');
+    // }
 });
-
 
 app.get('/',(request,response)=>{
     let name=request.query.name;
@@ -45,12 +39,10 @@ app.get('/',(request,response)=>{
     response.send('Request received');
 });
 
-
 app.get('/courses',(request,response)=>{
     console.log('/courses request');
     response.send('coureses request received');
 });
-
 
 client.connect(err=>{
     if(err){

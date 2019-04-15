@@ -5,10 +5,10 @@ customer_login_btn.addEventListener('click', () => {
     let ans = validate();
     if (ans) {
         let details = {
-            name: $('#cust_name').val(),
-            password: $('#cust_password').val()
+            "name": $('#cust_name').val(),
+            "password": $('#cust_password').val()
         }
-        let request=$.post('/',JSON.stringify(details),process_response);
+        let request=$.post('/',details,process_response);
         //request.error(handle_error);
     } else {
         $('#home_login_msg').text(' Input fields cannot be left blank').css('color','red');
@@ -27,6 +27,8 @@ function handle_error(){
 function process_response(responseText,status){
     alert('response text :'+responseText);
 }
+
+
 function validate() {
     if ($('#cust_name').val() === '' || $('#cust_password').val() === '')
         return false;

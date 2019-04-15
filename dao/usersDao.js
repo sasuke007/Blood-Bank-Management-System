@@ -10,10 +10,10 @@ function insertUser(user){
     },(err,result)=>{
         if(err){
             console.log('Error in inserting object '+err.message);
-            return 0;
+            
         }
         console.log(result);
-        return 1;
+        
     });
 }
 
