@@ -1,18 +1,31 @@
 <html>
     <head>
         <style>
+            body{
+                background-color: deepskyblue;
+            }
             #branches_heading{
                 position: absolute;
                 top: 0px;
                 left: 0px;
                 font-size: 50px;
+                font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+                text-shadow: 50px;
+                
             }
             #branches_signout{
                 position: absolute;
                 right: 0px;
                 top: 0px;
                 font-size: 30px;
-                
+                               
+            }
+            #branches_signout_button{
+                color: #4a17d6;
+                padding: 8px 16px;
+                border: 1px solid transparent;
+                border-color: transparent transparent rgba(0, 0, 0, 0.1) transparent;
+                cursor: pointer;
             }
             #branches_locationform{
                 position:absolute;
@@ -23,6 +36,10 @@
             #branches_details{
                 position: absolute;
                 bottom: 10px;
+                
+            }
+            #branches_details_textarea{
+                background-color: cornflowerblue;
             }
             #home_form_donor_text{
                 position: relative;
@@ -32,10 +49,32 @@
             #branches_state_heading{
                 font-size: 20px;
             }
+            #branches_city_heading{
+                font-size: 20px;
+            }
+            #home_state_list{
+                color: #4a17d6;
+                padding: 8px 16px;
+                border: 1px solid transparent;
+                border-color: transparent transparent rgba(0, 0, 0, 0.1) transparent;
+                cursor: pointer;
+            }
+            #home_city_list{
+                color: #4a17d6;
+                padding: 8px 16px;
+                border: 1px solid transparent;
+                border-color: transparent transparent rgba(0, 0, 0, 0.1) transparent;
+                cursor: pointer;
+            }
             #search{
                 position :relative;
                 left :45%;
                 margin-top: 30px;
+                color: #4a17d6;
+                padding: 8px 16px;
+                border: 1px solid transparent;
+                border-color: transparent transparent rgba(0, 0, 0, 0.1) transparent;
+                cursor: pointer;
             }
         </style>
     </head>
@@ -44,7 +83,7 @@
             Blood Bank
         </div>
         <div id="branches_signout">
-            <button type="button">Sign Out</button>
+            <button type="button" id="branches_signout_button">Sign Out</button>
         </div>
         <div id="branches_locationform">
                 <div id="home_form_donor_text">Find A Donor</div>
@@ -60,7 +99,7 @@
                         <option>Maharashtra</option>
                     </select>
                 </div>
-                <div>City : </div>
+                <div id="branches_city_heading">City : </div>
                 <div id="branches_form_city">
                     <select name="city" id="home_city_list">
                         <option>----Select City-----</option>
@@ -82,8 +121,8 @@
                 </div>
         </div>
         <div id="branches_details">
-            <textarea rows="18" cols="190">
-                At w3schools.com you will learn how to make a website. We offer free tutorials in all web development technologies.
+            <textarea rows="18" cols="190" id="branches_details_textarea">
+               
             </textarea>
         </div>
     </body>
