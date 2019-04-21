@@ -6,6 +6,17 @@ const bodyParser=require('body-parser');
 const client=require('./database/database').client;
 const userPojo=require('./pojo/usersPojo');
 const dao=require('./dao/usersDao');
+const multer=require('multer');
+const storage=multer.diskStorage({
+    destination: function (req, file, cb) {
+      cb(null, './userImage/');
+    },
+    filename: function (req, file, cb) {
+      cb(null, file.originalname);
+    }
+  });
+const upload=multer({storage:storage});
+
 
 app.use(bodyParser.urlencoded({
     extended: true
@@ -41,6 +52,13 @@ app.get('/',(request,response)=>{
 app.get('/courses',(request,response)=>{
     console.log('/courses request');
     response.send('coureses request received');
+});
+
+app.post('/profile',upload.single('fimage'),(req,res,next)=>{
+    console.log('profile request recieved');
+    console.log(req.body);
+    console.log(req.file);
+    res.send('Request Received');
 });
 
 client.connect(err=>{
