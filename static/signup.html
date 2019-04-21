@@ -1,0 +1,73 @@
+<html>
+    <head>
+        <style>
+        body{
+            background-color: darkgrey;
+        }
+        #signup_heading{
+            position: relative;
+            display: inline;
+            font-size: 50px;
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+            color: blue;
+            background-color: aliceblue;
+        }
+        #signup_form{
+            position:relative;
+            font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+            margin: auto;
+            background-color: #3CBC8D;
+            width: 500px;
+            height: 1200px;
+            display: block;
+            text-align: center;
+            background-color: rgb(241, 231, 247);
+            color:crimson;
+        }
+        .signup_field{
+            font-size: 30px;
+             
+        }
+        .signup_field_heading{
+            font-size: 40px;
+        }
+        input[type=submit] {
+            width: 20%;
+            background-color: #4CAF50;
+            color: white;
+            padding: 14px 20px;
+            margin: 8px 0;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+input[type=text], select,[type=date],[type=email],[type=password],[type=number] {
+  width: 80%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  display: inline-block;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+}
+        </style>
+    </head>
+    <body>
+        <div id="signup_heading">Blood Bank</div>
+        <form id="signup_form">
+            <div class="signup_field_heading">Name</div>
+            <div class="signup_field"><input type="text" name="ffirstname"></div>
+            <div class="signup_field_heading">ID</div>
+            <div class="signup_field"><input type="email" name="fID"></div>
+            <div class="signup_field_heading">E-Mail</div>
+            <div class="signup_field"><input type="email" name="femail"></div>
+            <div class="signup_field_heading">Profile Picture</div>
+            <div class="signup_field"><input type="file"  accept="image/*" name="fimage"></div>
+            <div class="signup_field_heading">Password</div>
+            <div class="signup_field"><input type="password" name="fpassword"></div>
+            <div class="signup_field_heading">Confirm Password</div>
+            <div class="signup_field"><input type="password" name="fconfirmpassword"></div>
+            <div class="signup_field"><input type="submit" name="submit"></div>
+        </form>
+    </body>
+</html>
