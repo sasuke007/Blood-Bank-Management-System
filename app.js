@@ -5,8 +5,9 @@ const ejs=require('ejs');
 const bodyParser=require('body-parser');
 const client=require('./database/database').client;
 const userPojo=require('./pojo/usersPojo');
-const dao=require('./dao/usersDao');
+const userDao=require('./dao/usersDao');
 const multer=require('multer');
+const path=require('path');
 const storage=multer.diskStorage({
     destination: function (req, file, cb) {
       cb(null, './userImage/');
@@ -55,10 +56,22 @@ app.get('/courses',(request,response)=>{
 });
 
 app.post('/profile',upload.single('fimage'),(req,res,next)=>{
-    console.log('profile request recieved');
-    console.log(req.body);
-    console.log(req.file);
-    res.send('Request Received');
+    let info=req.body;
+    let image=req.file;
+    let newUser=new userPojo(info.ffirstname,info.fpassword,'./userImage/'+image.originalname,info.femail);
+    let options={
+        root:__dirname + '/static/'
+    }
+    userDao.insertUser(newUser,(result)=>{
+        if (result==true){
+            console.log('Record Inserted in Database');
+            res.sendFile('home.html',options);
+        }
+        else{
+            console.log('Record Cannot be inserted in database');
+            res.status(500).sendFile('error.html',options);
+        }   
+    });
 });
 
 client.connect(err=>{
