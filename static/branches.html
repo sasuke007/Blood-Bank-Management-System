@@ -2,29 +2,32 @@
     <head>
         <style>
             body{
-                background-color: deepskyblue;
+                background-image: url("../images/background.jpg");
             }
             #branches_heading{
-                position: absolute;
-                top: 0px;
-                left: 0px;
+                position: relative;
+                display: inline;
                 font-size: 50px;
-                font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-                text-shadow: 50px;
+                color:aqua;
                 
             }
             #branches_signout{
                 position: absolute;
-                right: 0px;
+                right: 20px;
                 top: 0px;
                 font-size: 30px;
                                
             }
             #branches_signout_button{
-                color: #4a17d6;
-                padding: 8px 16px;
-                border: 1px solid transparent;
-                border-color: transparent transparent rgba(0, 0, 0, 0.1) transparent;
+                position: relative;
+                text-align: center;
+                width: 100%;
+                background-color: #4CAF50;
+                color: white;
+                padding: 14px 20px;
+                margin: 10px 10px;
+                border: none;
+                border-radius: 4px;
                 cursor: pointer;
             }
             #branches_locationform{
@@ -39,18 +42,21 @@
                 
             }
             #branches_details_textarea{
-                background-color: cornflowerblue;
+                background-color: transparent;
             }
-            #home_form_donor_text{
+            #branches_form_heading{
                 position: relative;
                 text-align: center;
                 font-size: 30px;
+                color:aqua;
             }
             #branches_state_heading{
                 font-size: 20px;
+                color: aqua;
             }
             #branches_city_heading{
                 font-size: 20px;
+                color:aqua;
             }
             #home_state_list{
                 color: #4a17d6;
@@ -86,7 +92,7 @@
             <button type="button" id="branches_signout_button">Sign Out</button>
         </div>
         <div id="branches_locationform">
-                <div id="home_form_donor_text">Find A Donor</div>
+                <div id="branches_form_heading">Find A Donor</div>
                 <div id="branches_state_heading">State : </div>
                 <div id="branches_form_state">
                     <select name="state" id="home_state_list"  >
