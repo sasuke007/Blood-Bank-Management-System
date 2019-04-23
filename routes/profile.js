@@ -19,7 +19,8 @@ const upload=multer({storage:storage});
 //router.set('views',path.join(__dirname,'views'));
 //router.set('view engine','ejs');
 
-
+router.use(bodyParser.json());
+router.use(bodyParser.urlencoded());
 
 
 router.post('/',upload.single('fimage'),(req,res)=>{
