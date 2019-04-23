@@ -19,4 +19,22 @@ function insertUser(user,callback){
     });
 }
 
+function findUser(user,callback){
+    console.log(user);
+    client.db('BloodBank').collection('users').findOne({
+        name:user.name,
+        password:user.password
+    },(err,result)=>{
+        if(err){
+            console.log('Error in inserting object '+err.message);
+            callback(false);
+        }
+        else{
+            console.log(result);
+            callback(true);
+        }
+    });
+}
+
 module.exports.insertUser=insertUser;
+module.exports.findUser=findUser;

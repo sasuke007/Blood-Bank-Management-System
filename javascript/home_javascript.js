@@ -28,7 +28,6 @@ function process_response(responseText,status){
     alert('response text :'+responseText);
 }
 
-
 function validate() {
     if ($('#cust_name').val() === '' || $('#cust_password').val() === '')
         return false;
