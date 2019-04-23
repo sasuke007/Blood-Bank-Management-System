@@ -30,8 +30,12 @@ function findUser(user,callback){
             callback(false);
         }
         else{
-            console.log(result);
-            callback(true);
+            if (result){
+                callback(true);
+            }
+            else{
+                callback(false);
+            }
         }
     });
 }

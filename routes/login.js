@@ -7,11 +7,12 @@ const UsersInfo=require('../pojo/usersInfoPojo');
 const findUser=require('../dao/usersDao').findUser;
 router.use(bodyParser.json());
 router.use(bodyParser.urlencoded({
-    extended:true;
+    extended:true
 }));
 
 router.post('/',(req,res)=>{
     console.log(req.body);
+    console.log(req.session);
     let user=req.body;
     let userDetails=new UsersInfo(user.name,user.password);
     findUser(userDetails,(result)=>{
@@ -21,7 +22,9 @@ router.post('/',(req,res)=>{
         }
         else{
             console.log('Record not found');
-            res.status(500).sendFile('error.html',options);
+            res.send('not found');
         }
     });
 });
+
+module.exports=router;
