@@ -54,11 +54,11 @@ input[type=text], select,[type=date],[type=email],[type=password],[type=number] 
     </head>
     <body>
         <div id="signup_heading">Blood Bank</div>
-        <form id="signup_form">
+        <form id="signup_form" enctype="multipart/form-data" method="POST" action="/profile">
             <div class="signup_field_heading">Name</div>
             <div class="signup_field"><input type="text" name="ffirstname"></div>
             <div class="signup_field_heading">ID</div>
-            <div class="signup_field"><input type="email" name="fID"></div>
+            <div class="signup_field"><input type="email" name="fid"></div>
             <div class="signup_field_heading">E-Mail</div>
             <div class="signup_field"><input type="email" name="femail"></div>
             <div class="signup_field_heading">Profile Picture</div>

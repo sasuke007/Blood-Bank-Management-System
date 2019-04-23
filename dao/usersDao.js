@@ -1,6 +1,6 @@
 const client=require('../database/database').client;
 
-function insertUser(user){
+function insertUser(user,callback){
     console.log(user);
     client.db('BloodBank').collection('users').insertOne({
         name:user.name,
@@ -10,10 +10,12 @@ function insertUser(user){
     },(err,result)=>{
         if(err){
             console.log('Error in inserting object '+err.message);
-            
+            callback(false);
         }
-        console.log(result);
-        
+        else{
+            console.log(result);
+            callback(true);
+        }
     });
 }
 
