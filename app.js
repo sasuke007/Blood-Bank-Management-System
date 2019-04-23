@@ -3,8 +3,10 @@ const app=express();
 const bodyParser=require('body-parser');
 const client=require('./database/database').client;
 const profiles=require('./routes/profile');
-
+const login=require('./routes/login');
 app.use('/profile',profiles);
+app.use('/login',login);
+
 app.use(bodyParser.urlencoded({
     extended: true
 }));
