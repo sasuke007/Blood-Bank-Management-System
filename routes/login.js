@@ -12,6 +12,7 @@ router.use(bodyParser.urlencoded({
 
 router.post('/',(req,res)=>{
     console.log(req.body);
+    console.log(req.session);
     let user=req.body;
     let userDetails=new UsersInfo(user.name,user.password);
     findUser(userDetails,(result)=>{

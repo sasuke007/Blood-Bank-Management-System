@@ -23,6 +23,10 @@ router.use(bodyParser.json());
 router.use(bodyParser.urlencoded({
     extended:true
 }));
+router.use(express.static('../static'));
+router.use(express.static('../css'));
+router.use(express.static('../javascript'));
+router.use(express.static('../images'));
 
 
 router.post('/',upload.single('fimage'),(req,res)=>{
@@ -30,12 +34,12 @@ router.post('/',upload.single('fimage'),(req,res)=>{
     let image=req.file;
     let newUser=new userPojo(info.ffirstname,info.fpassword,'./userImage/'+image.originalname,info.femail);
     let options={
-        root:__dirname + '/static/'
+        root:'E:/VS Code Projects/Node.js/Blood-Bank-Management-System/' + '/static/'
     }
     userDao.insertUser(newUser,(result)=>{
         if (result==true){
             console.log('Record Inserted in Database');
-            res.render('../views/home.ejs');
+            res.sendFile('userlogin.html',options);
         }
         else{
             console.log('Record Cannot be inserted in database');

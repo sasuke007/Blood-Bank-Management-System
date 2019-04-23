@@ -4,6 +4,13 @@ const bodyParser=require('body-parser');
 const client=require('./database/database').client;
 const profiles=require('./routes/profile');
 const login=require('./routes/login');
+const session = require('express-session');
+
+app.use(session({
+    secret:'my secret',
+    resave:false,
+    saveUninitialized:false
+}));
 app.use('/profile',profiles);
 app.use('/login',login);
 
