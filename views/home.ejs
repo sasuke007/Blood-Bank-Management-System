@@ -88,14 +88,6 @@
     <div id="home_outer_container">
         <div id="home_header_container">
            <!-- <div class="home_image_container"><img src="../images/logo.jpg" alt="Our Logo"></div>-->
-            <div id="home_login_container">
-                <div>Name:</div>
-                <div><input type="text" placeholder="Enter your Name Here" name="name" id = "cust_name"></div>
-                <div>Password:</div>
-                <div><input type="password" placeholder="Type your password here" name="password" id="cust_password"></div>
-                <div id="home_login_btn"><button>Submit</button></div>
-                <div id="home_login_msg"></div>
-            </div>
         </div>
         <nav id="home_navbar_container">
             <ul>
@@ -139,7 +131,7 @@
                 </div>
                 <div>Group : </div>
                 <div id="home_form_group">
-                    <select name="group" id="">
+                    <select name="group" id="home_blood_list">
                         <option>---Select Group---</option>
                         <option value="a_positive">A+</option>
                         <option value="a_negative">A-</option>
@@ -152,7 +144,7 @@
                     </select>
                 </div>
                 <div>
-                    <button id="search">
+                    <button id="search" >
                         Search
                     </button>
                 </div>
@@ -162,9 +154,7 @@
                 <img src="blood_donation.jpg">
             </div>
         </div>
-        <div>
-                <button class="admin_login">ADMIN LOGIN</button>
-        </div>
+        <a href="donorregistration.html">Sign up as Donor</a>
     </div>
     <script type="text/javascript" src="home_javascript.js"></script> 
 </body>

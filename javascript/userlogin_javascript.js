@@ -21,9 +21,14 @@ customer_login_btn.addEventListener('click', () => {
         $('#cust_password').val('');
 });
 
-function process_response(){
+function process_response(responseText,status){
     console.log('Request Recived');
-    alert('hi');
+    if (responseText=='not found'){
+        alert('Record not found');
+    }
+    else{
+        window.location=responseText;
+    }
 }
 
 function validate(){

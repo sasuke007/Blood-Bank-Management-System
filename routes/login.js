@@ -18,7 +18,9 @@ router.post('/',(req,res)=>{
     findUser(userDetails,(result)=>{
         if (result==true){
             console.log('Record Found');
-            res.render('../views/home.ejs');
+            req.session.userName=user.name;
+            console.log(req.sessionID);
+            res.send('/home');
         }
         else{
             console.log('Record not found');

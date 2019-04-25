@@ -1,14 +1,14 @@
-let admin_login_btn = document.querySelector('.admin_login');
-admin_login_btn.addEventListener('click', redirect);
-let customer_login_btn = document.querySelector('#home_login_btn');
-customer_login_btn.addEventListener('click', () => {
+
+let searchb = document.querySelector('#search');
+searchb.addEventListener('click', () => {
     let ans = validate();
     if (ans) {
-        let details = {
-            "name": $('#cust_name').val(),
-            "password": $('#cust_password').val()
+        let data = {
+            "state": $('#home_state_list').val(),
+            "city": $('#home_city_list').val(),
+            "blood": $('#home_blood_list').val()
         }
-        let request=$.post('/',details,process_response);
+        let request=$.post('/showdonor',data,process_response);
         //request.error(handle_error);
     } else {
         $('#home_login_msg').text(' Input fields cannot be left blank').css('color','red');
@@ -29,7 +29,7 @@ function process_response(responseText,status){
 }
 
 function validate() {
-    if ($('#cust_name').val() === '' || $('#cust_password').val() === '')
+    if ($('#home_state_list').val() === '' || $('#home_city_list').val() === ''|| $('home_blood_list')==='')
         return false;
     else
         return true;
