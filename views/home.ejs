@@ -7,6 +7,16 @@
     <title>Home Page</title> 
      
     <style>
+        body{
+            background-image: url("background.jpg");
+        }
+        #home_heading{
+            position:absolute;
+            top:10px;
+            left:10px;
+            font-size: 50px;
+            color:aqua;
+        }
         #home_header_container{
             display:flex;
             justify-content: flex-end;
@@ -21,13 +31,14 @@
         }
         #home_navbar_container ul{
             display:flex;
+            color:aqua;
             justify-content: space-around;
-            margin:20px;
+            margin:100px;
             list-style:none;
         }
         #home_navbar_container a{
             text-decoration:none;
-            color:black;
+            color:aqua;
             text-transform: uppercase;
             
         }
@@ -41,11 +52,14 @@
         }
         #home_mid_container>div{
             width:50%;
-            background-color: aqua;
+            background-color:transparent;
         }
         #home_image_container>img{
-            max-width: 100%;
-            max-height: 100%;
+            position:absolute;
+            top:150px;
+            right:50px;
+            max-width: 50%;
+            max-height: 70%;
             box-sizing:border-box;
             padding:10px;
             margin-top:3px;
@@ -55,7 +69,18 @@
             justify-content:center;
             align-items:center;
             background:linear-gradient(45 deg blue white);
+            color: aqua;
             padding:5px;
+        }
+        #search{
+            width: 80%;
+            background-color: #4CAF50;
+            color: white;
+            padding: 14px 20px;
+            margin: 4px 0;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
         }
         #home_form_container>div{
             display:grid;
@@ -81,10 +106,37 @@
             margin: 4px 2px;
             cursor: pointer;
         }
+        input[type=text], select,[type=date],[type=email],[type=password],[type=number],[type=file] {
+  width: 100%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  display: inline-block;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+
+}
+#home_signup{
+    position:absolute;
+    bottom:10px;
+    right:10px;
+    width: 20%;
+            background-color: #4CAF50;
+            color: white;
+            padding: 14px 20px;
+            margin: 4px 0;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+}
+
     </style>   
     <script type="text/javascript" src="jquery-3.3.1.js"></script> 
 </head>
 <body id="hello">
+    <div id="home_heading">
+        Blood Bank
+    </div>
     <div id="home_outer_container">
         <div id="home_header_container">
            <!-- <div class="home_image_container"><img src="../images/logo.jpg" alt="Our Logo"></div>-->
@@ -101,10 +153,8 @@
         <div id="home_mid_container">
             <div id="home_form_container">
                 <div>
-                        <form action="/find" method="POST">
                 <div id="home_form_donor_text">Find A Donor</div>
                 <div>State : </div>
-                
                 <div id="home_form_state">
                     <select name="state" id="home_state_list"  >
                         <option>---Select State----</option>
@@ -146,17 +196,17 @@
                     </select>
                 </div>
                 <div>
-                    <input type="submit" value="Submit">
+                    <button id="search" >
+                        Search
+                    </button>
                 </div>
-            </form>
             </div>
             </div>
-        
             <div id="home_image_container">
                 <img src="blood_donation.jpg">
             </div>
         </div>
-        <a href="donorregistration.html">Sign up as Donor</a>
+        <a href="donorregistration.html" id="home_signup">Sign up as Donor</a>
     </div>
     <script type="text/javascript" src="home_javascript.js"></script> 
 </body>
