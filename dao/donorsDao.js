@@ -21,7 +21,7 @@ function findDonor(donorInfo,callback){
     });
 };
 
-function insertUser(donor,callback){
+function insertDonor(donor,callback){
     console.log(donor);
     client.db('BloodBank').collection('donors').insertOne({
         firstName:donor.firstName,

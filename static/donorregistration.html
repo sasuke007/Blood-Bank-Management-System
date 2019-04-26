@@ -51,7 +51,7 @@ input[type=text], select,[type=date],[type=email],[type=password],[type=number],
     </head>
     <body>
         <div id="signup_heading">Blood Bank</div>
-        <form id="signup_form">
+        <form id="signup_form" method="POST" action="/profile/insertdonor" enctype="multipart/form-data">
             <div class="signup_field_heading">First Name</div>
             <div class="signup_field"><input type="text" name="ffirstname"></div>
             <div class="signup_field_heading">Last Name</div>

@@ -7,6 +7,8 @@ const userPojo=require('../pojo/usersPojo');
 const userDao=require('../dao/usersDao');
 const multer=require('multer');
 const path=require('path');
+const donorDao=require('../dao/donorsDao');
+const donorPojo=require('../pojo/donorsPojo');
 const storage=multer.diskStorage({
     destination: function (req, file, cb) {
       cb(null, './userImage/');
@@ -40,6 +42,27 @@ router.post('/',upload.single('fimage'),(req,res)=>{
         if (result==true){
             console.log('Record Inserted in Database');
             res.sendFile('userlogin.html',options);
+        }
+        else{
+            console.log('Record Cannot be inserted in database');
+            res.status(500).sendFile('error.html',options);
+        }   
+    });
+});
+
+router.post('/insertdonor',upload.single('fimage'),(req,res)=>{
+    let info=req.body;
+    let image=req.file;
+    console.log(info);
+    console.log(image);
+    let newDonor=new donorPojo(info.ffirstname,info.flastname,info.femail,info.fdate,info.fnumber,info.state,info.city,info.group,info.fpassword);
+    let options={
+        root:'E:/VS Code Projects/Node.js/Blood-Bank-Management-System/' + '/static/'
+    }
+    donorDao.insertDonor(newDonor,(result)=>{
+        if (result==true){
+            console.log('Record Inserted in Database');
+            res.redirect('../userlogin.html');
         }
         else{
             console.log('Record Cannot be inserted in database');

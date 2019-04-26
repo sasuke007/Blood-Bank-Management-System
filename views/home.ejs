@@ -101,8 +101,10 @@
         <div id="home_mid_container">
             <div id="home_form_container">
                 <div>
+                        <form action="/find" method="POST">
                 <div id="home_form_donor_text">Find A Donor</div>
                 <div>State : </div>
+                
                 <div id="home_form_state">
                     <select name="state" id="home_state_list"  >
                         <option>---Select State----</option>
@@ -144,12 +146,12 @@
                     </select>
                 </div>
                 <div>
-                    <button id="search" >
-                        Search
-                    </button>
+                    <input type="submit" value="Submit">
                 </div>
+            </form>
             </div>
             </div>
+        
             <div id="home_image_container">
                 <img src="blood_donation.jpg">
             </div>

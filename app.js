@@ -8,6 +8,8 @@ const session = require('express-session');
 const ejs=require('ejs');
 const render=require('./routes/render');
 const path=require('path');
+const findDonor=require('./routes/find');
+
 app.use(session({
     secret:'my secret',
     resave:false,
@@ -19,6 +21,7 @@ app.set('views',path.join(__dirname,'views'));
 app.set('view engine','ejs');
 app.use('/profile',profiles);
 app.use('/login',login);
+app.use('/find',findDonor);
 //app.use('/render',render);
 
 app.use(bodyParser.urlencoded({
